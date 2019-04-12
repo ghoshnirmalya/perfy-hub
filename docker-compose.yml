@@ -1,0 +1,35 @@
+version: "3"
+
+services:
+  perfy.hub:
+    build: .
+    image: strapi/strapi
+    environment:
+      - APP_NAME=hub
+      - DATABASE_CLIENT=mongo
+      - DATABASE_HOST=db
+      - DATABASE_PORT=27017
+      - DATABASE_NAME=hub
+      - DATABASE_USERNAME=
+      - DATABASE_PASSWORD=
+      - DATABASE_SSL=false
+      - DATABASE_AUTHENTICATION_DATABASE=hub
+      - HOST=localhost
+    ports:
+      - 1337:1337
+    volumes:
+      - ./hub:/usr/src/api/app
+      # - /usr/src/api/hub/node_modules
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: mongo
+    environment:
+      - MONGO_INITDB_DATABASE=hub
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
+    restart: always

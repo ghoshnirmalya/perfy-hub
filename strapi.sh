@@ -9,7 +9,7 @@ _stopStrapi() {
 
 trap _stopStrapi SIGTERM SIGINT
 
-cd /usr/src/api
+cd /hub-app
 
 APP_NAME=${APP_NAME:-strapi-app}
 DATABASE_CLIENT=${DATABASE_CLIENT:-mongo}

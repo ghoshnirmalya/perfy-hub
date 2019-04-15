@@ -1,0 +1,23 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "project",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "default": "",
+      "type": "string"
+    },
+    "users": {
+      "collection": "user",
+      "via": "projects",
+      "dominant": true,
+      "plugin": "users-permissions"
+    }
+  }
+}

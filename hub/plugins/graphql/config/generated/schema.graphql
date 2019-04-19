@@ -14,6 +14,14 @@ type createRolePayload {
   role: UsersPermissionsRole
 }
 
+input createUrlInput {
+  data: UrlInput
+}
+
+type createUrlPayload {
+  url: Url
+}
+
 input createUserInput {
   data: UserInput
 }
@@ -43,6 +51,14 @@ type deleteRolePayload {
   role: UsersPermissionsRole
 }
 
+input deleteUrlInput {
+  where: InputID
+}
+
+type deleteUrlPayload {
+  url: Url
+}
+
 input deleteUserInput {
   where: InputID
 }
@@ -67,6 +83,7 @@ input editFileInput {
 input editProjectInput {
   name: String
   users: [ID]
+  urls: [ID]
 }
 
 input editRoleInput {
@@ -75,6 +92,11 @@ input editRoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input editUrlInput {
+  link: String
+  project: ID
 }
 
 input editUserInput {
@@ -111,12 +133,15 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Project | createProjectPayload | updateProjectPayload | deleteProjectPayload | ProjectConnection | ProjectAggregator | ProjectGroupBy | ProjectConnection_id | ProjectConnectionCreatedAt | ProjectConnectionUpdatedAt | ProjectConnectionName | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Project | createProjectPayload | updateProjectPayload | deleteProjectPayload | ProjectConnection | ProjectAggregator | ProjectGroupBy | ProjectConnection_id | ProjectConnectionCreatedAt | ProjectConnectionUpdatedAt | ProjectConnectionName | Url | createUrlPayload | updateUrlPayload | deleteUrlPayload | UrlConnection | UrlAggregator | UrlGroupBy | UrlConnection_id | UrlConnectionCreatedAt | UrlConnectionUpdatedAt | UrlConnectionLink | UrlConnectionProject | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createProject(input: createProjectInput): createProjectPayload
   updateProject(input: updateProjectInput): updateProjectPayload
   deleteProject(input: deleteProjectInput): deleteProjectPayload
+  createUrl(input: createUrlInput): createUrlPayload
+  updateUrl(input: updateUrlInput): updateUrlPayload
+  deleteUrl(input: deleteUrlInput): deleteUrlPayload
 
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
@@ -144,6 +169,7 @@ type Project {
   updatedAt: DateTime!
   name: String
   users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  urls(sort: String, limit: Int, start: Int, where: JSON): [Url]
 }
 
 type ProjectAggregator {
@@ -186,12 +212,16 @@ type ProjectGroupBy {
 input ProjectInput {
   name: String
   users: [ID]
+  urls: [ID]
 }
 
 type Query {
   project(id: ID!): Project
   projects(sort: String, limit: Int, start: Int, where: JSON): [Project]
   projectsConnection(sort: String, limit: Int, start: Int, where: JSON): ProjectConnection
+  url(id: ID!): Url
+  urls(sort: String, limit: Int, start: Int, where: JSON): [Url]
+  urlsConnection(sort: String, limit: Int, start: Int, where: JSON): UrlConnection
   files(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!): UsersPermissionsRole
@@ -231,6 +261,15 @@ input updateRoleInput {
 
 type updateRolePayload {
   role: UsersPermissionsRole
+}
+
+input updateUrlInput {
+  where: InputID
+  data: editUrlInput
+}
+
+type updateUrlPayload {
+  url: Url
 }
 
 input updateUserInput {
@@ -344,6 +383,62 @@ type UploadFileGroupBy {
   url: [UploadFileConnectionUrl]
   provider: [UploadFileConnectionProvider]
   public_id: [UploadFileConnectionPublic_id]
+}
+
+type Url {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  link: String
+  project: Project
+}
+
+type UrlAggregator {
+  count: Int
+}
+
+type UrlConnection {
+  values: [Url]
+  groupBy: UrlGroupBy
+  aggregate: UrlAggregator
+}
+
+type UrlConnection_id {
+  key: ID
+  connection: UrlConnection
+}
+
+type UrlConnectionCreatedAt {
+  key: DateTime
+  connection: UrlConnection
+}
+
+type UrlConnectionLink {
+  key: String
+  connection: UrlConnection
+}
+
+type UrlConnectionProject {
+  key: ID
+  connection: UrlConnection
+}
+
+type UrlConnectionUpdatedAt {
+  key: DateTime
+  connection: UrlConnection
+}
+
+type UrlGroupBy {
+  _id: [UrlConnection_id]
+  createdAt: [UrlConnectionCreatedAt]
+  updatedAt: [UrlConnectionUpdatedAt]
+  link: [UrlConnectionLink]
+  project: [UrlConnectionProject]
+}
+
+input UrlInput {
+  link: String
+  project: ID
 }
 
 input UserInput {

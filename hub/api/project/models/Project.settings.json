@@ -18,6 +18,10 @@
       "via": "projects",
       "dominant": true,
       "plugin": "users-permissions"
+    },
+    "urls": {
+      "collection": "url",
+      "via": "project"
     }
   }
 }

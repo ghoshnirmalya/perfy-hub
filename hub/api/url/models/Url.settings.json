@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "url",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "link": {
+      "default": "",
+      "type": "string"
+    },
+    "project": {
+      "model": "project",
+      "via": "urls",
+      "dominant": true
+    }
+  }
+}

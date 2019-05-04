@@ -46,7 +46,7 @@
   "devDependencies": {
     "cross-env": "^5.0.5",
     "sanitize.css": "^4.1.0",
-    "strapi-helper-plugin": "3.0.0-alpha.25.2",
+    "strapi-helper-plugin": "3.0.0-debugalpha.4.1",
     "strapi-utils": "3.0.0-alpha.25.2"
   },
   "engines": {

@@ -37,7 +37,7 @@
     "graphql-type-datetime": "^0.2.2",
     "graphql-type-json": "^0.2.1",
     "pluralize": "^7.0.0",
-    "strapi-utils": "3.0.0-alpha.26.2"
+    "strapi-utils": "3.0.0-next.7"
   },
   "deprecated": false,
   "description": "This is the description of the plugin.",

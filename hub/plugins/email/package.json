@@ -39,7 +39,7 @@
   "devDependencies": {
     "react-copy-to-clipboard": "5.0.1",
     "rimraf": "^2.6.3",
-    "strapi-helper-plugin": "3.0.0-debugalpha.4.1"
+    "strapi-helper-plugin": "3.0.0-next.7"
   },
   "engines": {
     "node": ">= 10.0.0",

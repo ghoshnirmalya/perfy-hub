@@ -45,7 +45,7 @@
   "deprecated": false,
   "description": "Protect your API with a full-authentication process based on JWT",
   "devDependencies": {
-    "strapi-helper-plugin": "3.0.0-debugalpha.4.1"
+    "strapi-helper-plugin": "3.0.0-next.7"
   },
   "engines": {
     "node": ">= 10.0.0",

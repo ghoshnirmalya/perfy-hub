@@ -1,4 +1,6 @@
-FROM node:11.1.0-alpine
+FROM mhart/alpine-node:11.1.0
+
+RUN mkdir /web-app
 
 WORKDIR /hub-app
 

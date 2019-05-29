@@ -1,3 +1,155 @@
+type Audit {
+  _id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  userAgent: String
+  environment: JSON
+  lighthouseVersion: String
+  fetchTime: String
+  requestedUrl: String
+  finalUrl: String
+  audits: JSON
+  configSettings: JSON
+  categories: JSON
+  categoryGroups: JSON
+  timing: JSON
+  i18n: JSON
+  url: Url
+}
+
+type AuditAggregator {
+  count: Int
+}
+
+type AuditConnection {
+  values: [Audit]
+  groupBy: AuditGroupBy
+  aggregate: AuditAggregator
+}
+
+type AuditConnection_id {
+  key: ID
+  connection: AuditConnection
+}
+
+type AuditConnectionAudits {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionCategories {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionCategoryGroups {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionConfigSettings {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionCreatedAt {
+  key: DateTime
+  connection: AuditConnection
+}
+
+type AuditConnectionEnvironment {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionFetchTime {
+  key: String
+  connection: AuditConnection
+}
+
+type AuditConnectionFinalUrl {
+  key: String
+  connection: AuditConnection
+}
+
+type AuditConnectionI18n {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionLighthouseVersion {
+  key: String
+  connection: AuditConnection
+}
+
+type AuditConnectionRequestedUrl {
+  key: String
+  connection: AuditConnection
+}
+
+type AuditConnectionTiming {
+  key: JSON
+  connection: AuditConnection
+}
+
+type AuditConnectionUpdatedAt {
+  key: DateTime
+  connection: AuditConnection
+}
+
+type AuditConnectionUrl {
+  key: ID
+  connection: AuditConnection
+}
+
+type AuditConnectionUserAgent {
+  key: String
+  connection: AuditConnection
+}
+
+type AuditGroupBy {
+  _id: [AuditConnection_id]
+  createdAt: [AuditConnectionCreatedAt]
+  updatedAt: [AuditConnectionUpdatedAt]
+  userAgent: [AuditConnectionUserAgent]
+  environment: [AuditConnectionEnvironment]
+  lighthouseVersion: [AuditConnectionLighthouseVersion]
+  fetchTime: [AuditConnectionFetchTime]
+  requestedUrl: [AuditConnectionRequestedUrl]
+  finalUrl: [AuditConnectionFinalUrl]
+  audits: [AuditConnectionAudits]
+  configSettings: [AuditConnectionConfigSettings]
+  categories: [AuditConnectionCategories]
+  categoryGroups: [AuditConnectionCategoryGroups]
+  timing: [AuditConnectionTiming]
+  i18n: [AuditConnectionI18n]
+  url: [AuditConnectionUrl]
+}
+
+input AuditInput {
+  userAgent: String
+  environment: JSON
+  lighthouseVersion: String
+  fetchTime: String
+  requestedUrl: String
+  finalUrl: String
+  audits: JSON
+  configSettings: JSON
+  categories: JSON
+  categoryGroups: JSON
+  timing: JSON
+  i18n: JSON
+  url: ID
+}
+
+input createAuditInput {
+  data: AuditInput
+}
+
+type createAuditPayload {
+  audit: Audit
+}
+
 input createProjectInput {
   data: ProjectInput
 }
@@ -35,6 +187,14 @@ The `DateTime` scalar represents a date and time following the ISO 8601 standard
 """
 scalar DateTime
 
+input deleteAuditInput {
+  where: InputID
+}
+
+type deleteAuditPayload {
+  audit: Audit
+}
+
 input deleteProjectInput {
   where: InputID
 }
@@ -67,6 +227,22 @@ type deleteUserPayload {
   user: UsersPermissionsUser
 }
 
+input editAuditInput {
+  userAgent: String
+  environment: JSON
+  lighthouseVersion: String
+  fetchTime: String
+  requestedUrl: String
+  finalUrl: String
+  audits: JSON
+  configSettings: JSON
+  categories: JSON
+  categoryGroups: JSON
+  timing: JSON
+  i18n: JSON
+  url: ID
+}
+
 input editFileInput {
   name: String
   hash: String
@@ -97,6 +273,7 @@ input editRoleInput {
 input editUrlInput {
   link: String
   project: ID
+  audits: [ID]
 }
 
 input editUserInput {
@@ -133,9 +310,12 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Project | createProjectPayload | updateProjectPayload | deleteProjectPayload | ProjectConnection | ProjectAggregator | ProjectGroupBy | ProjectConnection_id | ProjectConnectionCreatedAt | ProjectConnectionUpdatedAt | ProjectConnectionName | Url | createUrlPayload | updateUrlPayload | deleteUrlPayload | UrlConnection | UrlAggregator | UrlGroupBy | UrlConnection_id | UrlConnectionCreatedAt | UrlConnectionUpdatedAt | UrlConnectionLink | UrlConnectionProject | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Audit | createAuditPayload | updateAuditPayload | deleteAuditPayload | AuditConnection | AuditAggregator | AuditGroupBy | AuditConnection_id | AuditConnectionCreatedAt | AuditConnectionUpdatedAt | AuditConnectionUserAgent | AuditConnectionEnvironment | AuditConnectionLighthouseVersion | AuditConnectionFetchTime | AuditConnectionRequestedUrl | AuditConnectionFinalUrl | AuditConnectionAudits | AuditConnectionConfigSettings | AuditConnectionCategories | AuditConnectionCategoryGroups | AuditConnectionTiming | AuditConnectionI18n | AuditConnectionUrl | Project | createProjectPayload | updateProjectPayload | deleteProjectPayload | ProjectConnection | ProjectAggregator | ProjectGroupBy | ProjectConnection_id | ProjectConnectionCreatedAt | ProjectConnectionUpdatedAt | ProjectConnectionName | Url | createUrlPayload | updateUrlPayload | deleteUrlPayload | UrlConnection | UrlAggregator | UrlGroupBy | UrlConnection_id | UrlConnectionCreatedAt | UrlConnectionUpdatedAt | UrlConnectionLink | UrlConnectionProject | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
+  createAudit(input: createAuditInput): createAuditPayload
+  updateAudit(input: updateAuditInput): updateAuditPayload
+  deleteAudit(input: deleteAuditInput): deleteAuditPayload
   createProject(input: createProjectInput): createProjectPayload
   updateProject(input: updateProjectInput): updateProjectPayload
   deleteProject(input: deleteProjectInput): deleteProjectPayload
@@ -216,6 +396,9 @@ input ProjectInput {
 }
 
 type Query {
+  audit(id: ID!): Audit
+  audits(sort: String, limit: Int, start: Int, where: JSON): [Audit]
+  auditsConnection(sort: String, limit: Int, start: Int, where: JSON): AuditConnection
   project(id: ID!): Project
   projects(sort: String, limit: Int, start: Int, where: JSON): [Project]
   projectsConnection(sort: String, limit: Int, start: Int, where: JSON): ProjectConnection
@@ -243,6 +426,15 @@ input RoleInput {
   type: String
   permissions: [ID]
   users: [ID]
+}
+
+input updateAuditInput {
+  where: InputID
+  data: editAuditInput
+}
+
+type updateAuditPayload {
+  audit: Audit
 }
 
 input updateProjectInput {
@@ -391,6 +583,7 @@ type Url {
   updatedAt: DateTime!
   link: String
   project: Project
+  audits(sort: String, limit: Int, start: Int, where: JSON): [Audit]
 }
 
 type UrlAggregator {
@@ -439,6 +632,7 @@ type UrlGroupBy {
 input UrlInput {
   link: String
   project: ID
+  audits: [ID]
 }
 
 input UserInput {

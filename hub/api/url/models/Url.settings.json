@@ -1,6 +1,6 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "url",
   "info": {
     "name": "url",
     "description": ""
@@ -17,6 +17,10 @@
       "model": "project",
       "via": "urls",
       "dominant": true
+    },
+    "audits": {
+      "collection": "audit",
+      "via": "url"
     }
   }
 }

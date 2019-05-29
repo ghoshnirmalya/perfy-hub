@@ -1,0 +1,65 @@
+{
+  "connection": "default",
+  "collectionName": "audit",
+  "info": {
+    "name": "audit",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "userAgent": {
+      "default": "",
+      "type": "string"
+    },
+    "environment": {
+      "default": "",
+      "type": "json"
+    },
+    "lighthouseVersion": {
+      "default": "",
+      "type": "string"
+    },
+    "fetchTime": {
+      "default": "",
+      "type": "string"
+    },
+    "requestedUrl": {
+      "default": "",
+      "type": "string"
+    },
+    "finalUrl": {
+      "default": "",
+      "type": "string"
+    },
+    "audits": {
+      "default": "",
+      "type": "json"
+    },
+    "configSettings": {
+      "default": "",
+      "type": "json"
+    },
+    "categories": {
+      "default": "",
+      "type": "json"
+    },
+    "categoryGroups": {
+      "default": "",
+      "type": "json"
+    },
+    "timing": {
+      "default": "",
+      "type": "json"
+    },
+    "i18n": {
+      "default": "",
+      "type": "json"
+    },
+    "url": {
+      "model": "url",
+      "via": "audits"
+    }
+  }
+}

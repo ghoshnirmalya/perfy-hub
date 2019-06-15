@@ -1,0 +1,11 @@
+- args:
+    permission:
+      filter:
+        users:
+          user_id:
+            _eq: x-hasura-user-id
+    role: user
+    table:
+      name: project
+      schema: public
+  type: create_delete_permission

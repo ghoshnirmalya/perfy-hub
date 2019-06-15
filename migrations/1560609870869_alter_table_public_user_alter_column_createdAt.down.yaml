@@ -1,0 +1,10 @@
+- args:
+    sql: ALTER TABLE "public"."user" ALTER COLUMN "createdAt" TYPE timestamp with
+      time zone;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."user"."createdAt" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."user" rename column "created_at" to "createdAt";
+  type: run_sql

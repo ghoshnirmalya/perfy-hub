@@ -1,0 +1,27 @@
+- args:
+    role: user
+    table:
+      name: user
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check:
+        id:
+          _eq: x-hasura-user-id
+      columns:
+      - email
+      - password
+      - role
+      - created_at
+      - updated_at
+      - id
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: user
+      schema: public
+  type: create_insert_permission

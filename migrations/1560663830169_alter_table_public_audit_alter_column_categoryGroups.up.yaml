@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."categoryGroups" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "categoryGroups" to "category_groups";
+  type: run_sql

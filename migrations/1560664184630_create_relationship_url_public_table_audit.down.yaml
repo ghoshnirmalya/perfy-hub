@@ -1,0 +1,6 @@
+- args:
+    relationship: url
+    table:
+      name: audit
+      schema: public
+  type: drop_relationship

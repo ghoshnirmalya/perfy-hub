@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."configSettings" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "config_settings" to "configSettings";
+  type: run_sql

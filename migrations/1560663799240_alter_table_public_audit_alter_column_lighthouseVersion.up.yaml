@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."lighthouseVersion" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "lighthouseVersion" to "lighthouse_version";
+  type: run_sql

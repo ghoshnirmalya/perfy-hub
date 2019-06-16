@@ -1,0 +1,10 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "fetchTime" TYPE timestamp with
+      time zone;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."fetchTime" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "fetch_time" to "fetchTime";
+  type: run_sql

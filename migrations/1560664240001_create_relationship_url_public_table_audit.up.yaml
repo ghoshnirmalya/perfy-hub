@@ -1,0 +1,13 @@
+- args:
+    name: url
+    table:
+      name: audit
+      schema: public
+    using:
+      manual_configuration:
+        column_mapping:
+          url_id: id
+        remote_table:
+          name: url
+          schema: public
+  type: create_object_relationship

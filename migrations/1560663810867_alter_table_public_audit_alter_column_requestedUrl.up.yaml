@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."requestedUrl" IS ''
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "requestedUrl" to "requested_url";
+  type: run_sql

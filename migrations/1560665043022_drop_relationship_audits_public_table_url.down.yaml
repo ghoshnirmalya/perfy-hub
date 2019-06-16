@@ -1,0 +1,12 @@
+- args:
+    name: audits
+    table:
+      name: url
+      schema: public
+    using:
+      foreign_key_constraint_on:
+        column: url_id
+        table:
+          name: audit
+          schema: public
+  type: create_array_relationship

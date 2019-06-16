@@ -1,0 +1,6 @@
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."userAgent" IS 'null'
+  type: run_sql
+- args:
+    sql: alter table "public"."audit" rename column "user_agent" to "userAgent";
+  type: run_sql

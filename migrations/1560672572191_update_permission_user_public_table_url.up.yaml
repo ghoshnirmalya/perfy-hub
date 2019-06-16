@@ -1,0 +1,24 @@
+- args:
+    role: user
+    table:
+      name: url
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - created_at
+      - updated_at
+      - project_id
+      - id
+      - link
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: url
+      schema: public
+  type: create_insert_permission

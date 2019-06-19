@@ -1,1 +1,1 @@
-endpoint: https://hub-4bjp.onrender.com/
+endpoint: ${ENDPOINT}

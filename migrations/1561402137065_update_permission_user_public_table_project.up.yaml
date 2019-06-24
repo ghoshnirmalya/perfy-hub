@@ -1,0 +1,31 @@
+- args:
+    role: user
+    table:
+      name: project
+      schema: public
+  type: drop_update_permission
+- args:
+    permission:
+      columns:
+      - password_field_value
+      - password_field_selector
+      - username_or_email_address_field_value
+      - cookies
+      - username_or_email_address_field_selector
+      - id
+      - submit_button_selector
+      - name
+      - login_url
+      filter:
+        users:
+          user_id:
+            _eq: x-hasura-user-id
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: project
+      schema: public
+  type: create_update_permission

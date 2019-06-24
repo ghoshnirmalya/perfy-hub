@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."project" ADD COLUMN "username_or_email_address_field_selector"
+      text NULL
+  type: run_sql

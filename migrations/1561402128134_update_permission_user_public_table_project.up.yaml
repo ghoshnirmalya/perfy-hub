@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table:
+      name: project
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - id
+      - name
+      - username_or_email_address_field_selector
+      - password_field_selector
+      - submit_button_selector
+      - cookies
+      - login_url
+      - username_or_email_address_field_value
+      - password_field_value
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: project
+      schema: public
+  type: create_insert_permission

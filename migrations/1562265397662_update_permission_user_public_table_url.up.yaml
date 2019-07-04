@@ -1,0 +1,21 @@
+- args:
+    role: user
+    table:
+      name: url
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - id
+      - link
+      - created_at
+      - updated_at
+      - project_id
+      filter: {}
+    role: user
+    table:
+      name: url
+      schema: public
+  type: create_select_permission

@@ -1,0 +1,28 @@
+- args:
+    role: user
+    table:
+      name: project
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: true
+      columns:
+      - password_field_value
+      - password_field_selector
+      - username_or_email_address_field_value
+      - cookies
+      - username_or_email_address_field_selector
+      - id
+      - submit_button_selector
+      - name
+      - login_url
+      filter:
+        users:
+          user_id:
+            _eq: x-hasura-user-id
+    role: user
+    table:
+      name: project
+      schema: public
+  type: create_select_permission

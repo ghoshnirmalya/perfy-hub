@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."audit" DROP COLUMN "config_settings_emulated_form_factor";
+  type: run_sql

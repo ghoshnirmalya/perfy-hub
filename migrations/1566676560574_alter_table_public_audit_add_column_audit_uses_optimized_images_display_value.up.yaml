@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_uses_optimized_images_display_value"
+      text NULL;
+  type: run_sql

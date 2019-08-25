@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "lighthouse_version" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "lighthouse_version" DROP NOT NULL
+  type: run_sql

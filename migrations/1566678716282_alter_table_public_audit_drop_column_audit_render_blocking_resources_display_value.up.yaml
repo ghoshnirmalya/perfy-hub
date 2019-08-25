@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" DROP COLUMN "audit_render_blocking_resources_display_value"
+      CASCADE
+  type: run_sql

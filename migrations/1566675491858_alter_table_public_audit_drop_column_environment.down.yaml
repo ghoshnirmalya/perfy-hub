@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "environment" text
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "environment" DROP NOT NULL
+  type: run_sql

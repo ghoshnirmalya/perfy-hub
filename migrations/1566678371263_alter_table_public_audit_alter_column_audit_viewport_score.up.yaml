@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "audit_viewport_score" TYPE numeric;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."audit_viewport_score" IS E''
+  type: run_sql

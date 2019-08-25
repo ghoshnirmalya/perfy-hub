@@ -1,0 +1,6 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audits" json
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "audits" DROP NOT NULL
+  type: run_sql

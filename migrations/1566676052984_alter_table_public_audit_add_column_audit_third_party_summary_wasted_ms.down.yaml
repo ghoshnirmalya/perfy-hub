@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."audit" DROP COLUMN "audit_third_party_summary_wasted_ms";
+  type: run_sql

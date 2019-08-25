@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_unused_css_rules_overall_savings_ms"
+      text NULL;
+  type: run_sql

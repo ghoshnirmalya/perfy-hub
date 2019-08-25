@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_service_worker_score" integer
+      NULL;
+  type: run_sql

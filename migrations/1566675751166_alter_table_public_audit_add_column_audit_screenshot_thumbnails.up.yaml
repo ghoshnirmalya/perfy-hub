@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_screenshot_thumbnails" json
+      NULL;
+  type: run_sql

@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "audit_without_javascript_score"
+      TYPE integer;
+  type: run_sql
+- args:
+    sql: COMMENT ON COLUMN "public"."audit"."audit_without_javascript_score" IS E'null'
+  type: run_sql

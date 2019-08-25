@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_uses_text_compression_details"
+      json NULL;
+  type: run_sql

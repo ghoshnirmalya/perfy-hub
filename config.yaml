@@ -1,1 +1,1 @@
-endpoint: ${ENDPOINT}
+endpoint: http://localhost:8080

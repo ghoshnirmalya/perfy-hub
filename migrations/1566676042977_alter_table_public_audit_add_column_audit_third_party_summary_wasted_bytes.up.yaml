@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_third_party_summary_wasted_bytes"
+      text NULL;
+  type: run_sql

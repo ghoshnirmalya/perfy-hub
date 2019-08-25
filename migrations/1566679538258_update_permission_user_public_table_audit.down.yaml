@@ -1,0 +1,22 @@
+- args:
+    role: user
+    table:
+      name: audit
+      schema: public
+  type: drop_select_permission
+- args:
+    permission:
+      allow_aggregations: false
+      columns:
+      - created_at
+      - fetch_time
+      - final_url
+      - id
+      - requested_url
+      - url_id
+      filter: {}
+    role: user
+    table:
+      name: audit
+      schema: public
+  type: create_select_permission

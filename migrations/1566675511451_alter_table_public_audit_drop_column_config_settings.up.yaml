@@ -1,0 +1,3 @@
+- args:
+    sql: ALTER TABLE "public"."audit" DROP COLUMN "config_settings" CASCADE
+  type: run_sql

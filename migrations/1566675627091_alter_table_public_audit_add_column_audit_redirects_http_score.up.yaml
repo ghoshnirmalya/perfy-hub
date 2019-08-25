@@ -1,0 +1,4 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_redirects_http_score" integer
+      NULL;
+  type: run_sql

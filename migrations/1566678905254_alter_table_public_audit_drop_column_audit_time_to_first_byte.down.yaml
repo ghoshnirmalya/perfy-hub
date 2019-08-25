@@ -1,0 +1,7 @@
+- args:
+    sql: ALTER TABLE "public"."audit" ADD COLUMN "audit_time_to_first_byte" int4
+  type: run_sql
+- args:
+    sql: ALTER TABLE "public"."audit" ALTER COLUMN "audit_time_to_first_byte" DROP
+      NOT NULL
+  type: run_sql

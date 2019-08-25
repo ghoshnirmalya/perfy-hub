@@ -1,0 +1,25 @@
+- args:
+    role: user
+    table:
+      name: audit
+      schema: public
+  type: drop_insert_permission
+- args:
+    permission:
+      check: {}
+      columns:
+      - created_at
+      - fetch_time
+      - final_url
+      - id
+      - requested_url
+      - url_id
+      localPresets:
+      - key: ""
+        value: ""
+      set: {}
+    role: user
+    table:
+      name: audit
+      schema: public
+  type: create_insert_permission

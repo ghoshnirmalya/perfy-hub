@@ -1,5 +1,5 @@
 - args:
-    relationship: project
+    relationship: site
     table:
       name: url
       schema: public

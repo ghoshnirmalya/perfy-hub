@@ -9,7 +9,7 @@
       columns:
       - created_at
       - updated_at
-      - project_id
+      - site_id
       - id
       - link
       filter: {}

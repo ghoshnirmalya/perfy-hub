@@ -1,5 +1,5 @@
 - args:
-    name: projects
+    name: sites
     table:
       name: user
       schema: public
@@ -7,6 +7,6 @@
       foreign_key_constraint_on:
         column: user_id
         table:
-          name: project_user
+          name: site_user
           schema: public
   type: create_array_relationship

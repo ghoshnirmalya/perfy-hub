@@ -1,3 +1,3 @@
 - args:
-    sql: ALTER TABLE "public"."project" DROP COLUMN "submit_button_selector"
+    sql: ALTER TABLE "public"."site" DROP COLUMN "submit_button_selector"
   type: run_sql

@@ -10,6 +10,14 @@
       columns:
       - id
       - name
+      - username_or_email_address_field_selector
+      - password_field_selector
+      - submit_button_selector
+      - cookies
+      - login_url
+      - username_or_email_address_field_value
+      - password_field_value
+      - created_at
       localPresets:
       - key: ""
         value: ""

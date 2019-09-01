@@ -12,7 +12,7 @@
       - link
       - created_at
       - updated_at
-      - project_id
+      - site_id
       filter: {}
     role: user
     table:

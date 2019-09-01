@@ -2,13 +2,13 @@
     sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
   type: run_sql
 - args:
-    sql: CREATE TABLE "public"."project_user"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
-      "project_id" uuid NOT NULL, "user_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN
-      KEY ("project_id") REFERENCES "public"."project"("id") ON UPDATE restrict ON
+    sql: CREATE TABLE "public"."site_user"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+      "site_id" uuid NOT NULL, "user_id" uuid NOT NULL, PRIMARY KEY ("id") , FOREIGN
+      KEY ("site_id") REFERENCES "public"."site"("id") ON UPDATE restrict ON
       DELETE restrict, FOREIGN KEY ("user_id") REFERENCES "public"."user"("id") ON
       UPDATE restrict ON DELETE restrict, UNIQUE ("id"));
   type: run_sql
 - args:
-    name: project_user
+    name: site_user
     schema: public
   type: add_existing_table_or_view

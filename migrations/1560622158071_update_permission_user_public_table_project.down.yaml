@@ -1,7 +1,7 @@
 - args:
     role: user
     table:
-      name: project
+      name: site
       schema: public
   type: drop_insert_permission
 - args:
@@ -19,6 +19,6 @@
       set: {}
     role: user
     table:
-      name: project
+      name: site
       schema: public
   type: create_insert_permission

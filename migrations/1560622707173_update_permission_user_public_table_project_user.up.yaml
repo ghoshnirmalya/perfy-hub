@@ -1,7 +1,7 @@
 - args:
     role: user
     table:
-      name: project_user
+      name: site_user
       schema: public
   type: drop_insert_permission
 - args:
@@ -9,7 +9,7 @@
       check: {}
       columns:
       - id
-      - project_id
+      - site_id
       - user_id
       localPresets:
       - key: ""
@@ -17,6 +17,6 @@
       set: {}
     role: user
     table:
-      name: project_user
+      name: site_user
       schema: public
   type: create_insert_permission

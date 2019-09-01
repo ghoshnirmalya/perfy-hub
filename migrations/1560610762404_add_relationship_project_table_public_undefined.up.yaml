@@ -1,8 +1,8 @@
 - args:
-    name: project
+    name: site
     table:
-      name: project_user
+      name: site_user
       schema: public
     using:
-      foreign_key_constraint_on: project_id
+      foreign_key_constraint_on: site_id
   type: create_object_relationship

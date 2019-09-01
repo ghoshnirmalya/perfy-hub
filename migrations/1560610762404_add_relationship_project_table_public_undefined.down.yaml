@@ -1,6 +1,6 @@
 - args:
-    relationship: project
+    relationship: site
     table:
-      name: project_user
+      name: site_user
       schema: public
   type: drop_relationship

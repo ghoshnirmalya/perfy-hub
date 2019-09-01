@@ -6,6 +6,6 @@
       limit: null
     role: user
     table:
-      name: project_user
+      name: site_user
       schema: public
   type: create_select_permission

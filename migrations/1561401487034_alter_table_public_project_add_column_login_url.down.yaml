@@ -1,3 +1,3 @@
 - args:
-    sql: ALTER TABLE "public"."project" DROP COLUMN "login_url"
+    sql: ALTER TABLE "public"."site" DROP COLUMN "login_url"
   type: run_sql

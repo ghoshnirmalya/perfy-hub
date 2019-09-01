@@ -1,13 +1,13 @@
 - args:
-    name: user_projects
+    name: user_sites
     table:
       name: user
       schema: public
     using:
       manual_configuration:
         column_mapping:
-          projects: id
+          sites: id
         remote_table:
-          name: project
+          name: site
           schema: public
   type: create_array_relationship

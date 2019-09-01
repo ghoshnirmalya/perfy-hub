@@ -9,6 +9,6 @@
       limit: null
     role: user
     table:
-      name: project
+      name: site
       schema: public
   type: create_select_permission

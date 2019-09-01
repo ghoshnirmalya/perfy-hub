@@ -1,12 +1,12 @@
 - args:
     name: urls
     table:
-      name: project
+      name: site
       schema: public
     using:
       manual_configuration:
         column_mapping:
-          id: project_id
+          id: site_id
         remote_table:
           name: url
           schema: public

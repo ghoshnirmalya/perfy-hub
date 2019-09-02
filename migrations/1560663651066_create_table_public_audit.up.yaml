@@ -6,7 +6,7 @@
       "userAgent" text , "environment" text , "lighthouseVersion" text , "fetchTime"
       timestamptz NOT NULL DEFAULT now(), "requestedUrl" text , "finalUrl" text ,
       "audits" json , "configSettings" json , "categories" json , "categoryGroups"
-      json , "timing" json , "i18n" json , "url" text , "created_at" timestamptz NOT
+      json , "timing" json , "i18n" json , "page" text , "created_at" timestamptz NOT
       NULL DEFAULT now(), PRIMARY KEY ("id") , UNIQUE ("id"));
   type: run_sql
 - args:

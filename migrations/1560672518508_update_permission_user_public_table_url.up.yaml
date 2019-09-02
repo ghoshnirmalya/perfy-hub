@@ -8,6 +8,6 @@
       set: {}
     role: user
     table:
-      name: url
+      name: page
       schema: public
   type: create_update_permission

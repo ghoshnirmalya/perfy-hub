@@ -1,0 +1,6 @@
+- args:
+    sql: "\n          alter table \"public\".\"site_user\" drop constraint \"site_user_site_id_fkey\",\n
+      \         add constraint \"site_user_site_id_fkey\" \n          foreign key
+      (\"site_id\") \n          references \"public\".\"site\"\n          (\"id\")
+      \n          on update restrict\n          on delete restrict;\n        "
+  type: run_sql

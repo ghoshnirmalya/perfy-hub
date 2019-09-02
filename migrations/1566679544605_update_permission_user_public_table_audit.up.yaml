@@ -119,7 +119,7 @@
       - created_at
       - fetch_time
       - id
-      - url_id
+      - page_id
       filter: {}
       localPresets:
       - key: ""

@@ -1,5 +1,5 @@
 - args:
-    name: url
+    name: page
     table:
       name: audit
       schema: public
@@ -7,6 +7,6 @@
       foreign_key_constraint_on:
         column: id
         table:
-          name: url
+          name: page
           schema: public
   type: create_array_relationship

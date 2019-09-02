@@ -3,6 +3,6 @@
       filter: {}
     role: user
     table:
-      name: url
+      name: page
       schema: public
   type: create_delete_permission

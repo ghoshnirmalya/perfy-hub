@@ -2,11 +2,12 @@
     sql: CREATE EXTENSION IF NOT EXISTS pgcrypto;
   type: run_sql
 - args:
-    sql: CREATE TABLE "public"."url"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
+    sql:
+      CREATE TABLE "public"."page"("id" uuid NOT NULL DEFAULT gen_random_uuid(),
       "link" text NOT NULL, "created_at" date NOT NULL, "updated_at" date NOT NULL,
       PRIMARY KEY ("id") , UNIQUE ("id"));
   type: run_sql
 - args:
-    name: url
+    name: page
     schema: public
   type: add_existing_table_or_view

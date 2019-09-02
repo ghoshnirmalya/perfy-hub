@@ -1,10 +1,10 @@
 - args:
-    sql: ALTER TABLE "public"."url" ALTER COLUMN "updated_at" TYPE timestamp with
+    sql: ALTER TABLE "public"."page" ALTER COLUMN "updated_at" TYPE timestamp with
       time zone;
   type: run_sql
 - args:
-    sql: ALTER TABLE ONLY "public"."url" ALTER COLUMN "updated_at" SET DEFAULT now();
+    sql: ALTER TABLE ONLY "public"."page" ALTER COLUMN "updated_at" SET DEFAULT now();
   type: run_sql
 - args:
-    sql: COMMENT ON COLUMN "public"."url"."updated_at" IS 'null'
+    sql: COMMENT ON COLUMN "public"."page"."updated_at" IS 'null'
   type: run_sql

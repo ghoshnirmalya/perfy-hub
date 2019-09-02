@@ -13,7 +13,7 @@
       - final_url
       - id
       - requested_url
-      - url_id
+      - page_id
       filter: {}
     role: user
     table:

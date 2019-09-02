@@ -1,7 +1,7 @@
 - args:
     name: site
     table:
-      name: url
+      name: page
       schema: public
     using:
       manual_configuration:

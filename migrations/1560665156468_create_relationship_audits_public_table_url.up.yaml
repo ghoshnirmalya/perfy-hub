@@ -1,12 +1,12 @@
 - args:
     name: audits
     table:
-      name: url
+      name: page
       schema: public
     using:
       manual_configuration:
         column_mapping:
-          id: url_id
+          id: page_id
         remote_table:
           name: audit
           schema: public

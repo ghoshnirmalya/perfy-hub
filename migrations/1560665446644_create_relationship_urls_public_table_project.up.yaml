@@ -1,5 +1,5 @@
 - args:
-    name: urls
+    name: pages
     table:
       name: site
       schema: public
@@ -8,6 +8,6 @@
         column_mapping:
           id: site_id
         remote_table:
-          name: url
+          name: page
           schema: public
   type: create_array_relationship

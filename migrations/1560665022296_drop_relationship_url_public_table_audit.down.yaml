@@ -1,8 +1,8 @@
 - args:
-    name: url
+    name: page
     table:
       name: audit
       schema: public
     using:
-      foreign_key_constraint_on: url_id
+      foreign_key_constraint_on: page_id
   type: create_object_relationship

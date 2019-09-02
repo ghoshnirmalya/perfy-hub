@@ -6,6 +6,6 @@
       limit: null
     role: user
     table:
-      name: url
+      name: page
       schema: public
   type: create_select_permission

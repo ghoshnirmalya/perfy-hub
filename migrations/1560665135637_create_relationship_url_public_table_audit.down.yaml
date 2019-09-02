@@ -1,5 +1,5 @@
 - args:
-    relationship: url
+    relationship: page
     table:
       name: audit
       schema: public

@@ -13,7 +13,7 @@
       - requested_url
       - final_url
       - created_at
-      - url_id
+      - page_id
       - audit_is_on_https_score
       - audit_redirects_http_score
       - audit_service_worker_score
